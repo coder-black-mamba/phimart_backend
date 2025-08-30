@@ -53,7 +53,12 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
-
+CORS_ALLOW_ALL_ORIGINS = True  
+CSRF_TRUSTED_ORIGINS = [
+    "https://phimart-backend.onrender.com",
+    "https://your-frontend-domain.com",   # e.g. if you deploy frontend separately
+    "http://localhost:3000",              # for local dev
+]
 ROOT_URLCONF = 'phi_mart.urls'
 
 TEMPLATES = [
@@ -74,9 +79,7 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'phi_mart.wsgi.app'
 
-CORS_ALLOWED_ORIGINS = [
-    'http://localhost:5174',
-]
+
 
 
 INTERNAL_IPS = [
