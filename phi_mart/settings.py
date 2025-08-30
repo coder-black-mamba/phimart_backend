@@ -188,6 +188,8 @@ DJOSER = {
     'EMAIL_FRONTEND_SITE_NAME': 'PhiMart',
     'PASSWORD_RESET_CONFIRM_URL': 'password/reset/confirm/{uid}/{token}',
     'ACTIVATION_URL': 'activate/{uid}/{token}',
+    'SITE_NAME': 'PhiMart',
+    'DOMAIN': 'phimart-backend.onrender.com',
     'SEND_ACTIVATION_EMAIL': True,
     'SERIALIZERS': {
         'user_create': 'users.serializers.UserCreateSerializer',
