@@ -16,7 +16,7 @@ SECRET_KEY = 'django-insecure-_-sw+995f4t48rwyxucty93nmor3r&u0(secce*$8+36=xcv3-
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [".vercel.app", '127.0.0.1', 'localhost','*.onrender.com','*']
+ALLOWED_HOSTS = ['*']
 AUTH_USER_MODEL = 'users.User'
 
 # Application definition
@@ -55,9 +55,8 @@ MIDDLEWARE = [
 ]
 CORS_ALLOW_ALL_ORIGINS = True  
 CSRF_TRUSTED_ORIGINS = [
-    "https://phimart-backend.onrender.com",
-    "https://your-frontend-domain.com",   # e.g. if you deploy frontend separately
-    "http://localhost:3000",              # for local dev
+    "https://phimart-backend.onrender.com", # e.g. if you deploy frontend separately
+    "http://localhost:5173",              # for local dev
 ]
 ROOT_URLCONF = 'phi_mart.urls'
 
@@ -90,23 +89,23 @@ INTERNAL_IPS = [
 # Database
 # https://docs.djangoproject.com/en/5.1/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
-    }
-}
-
 # DATABASES = {
 #     'default': {
-#         'ENGINE': 'django.db.backends.postgresql',
-#         'NAME': config('dbname'),
-#         'USER': config('user'),
-#         'PASSWORD': config('password'),
-#         'HOST': config('host'),
-#         'PORT': config('port')
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
 #     }
 # }
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': config('dbname'),
+        'USER': config('user'),
+        'PASSWORD': config('password'),
+        'HOST': config('host'),
+        'PORT': config('port')
+    }
+}
 
 
 # Password validation
